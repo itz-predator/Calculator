@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/itz-predator.github.io/Calculator/static/css/main.dc4d6ff2.css",
+    "main.js": "/itz-predator.github.io/Calculator/static/js/main.becb9cb6.js",
+    "index.html": "/itz-predator.github.io/Calculator/index.html",
+    "main.dc4d6ff2.css.map": "/itz-predator.github.io/Calculator/static/css/main.dc4d6ff2.css.map",
+    "main.becb9cb6.js.map": "/itz-predator.github.io/Calculator/static/js/main.becb9cb6.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.dc4d6ff2.css",
+    "static/js/main.becb9cb6.js"
+  ]
+}

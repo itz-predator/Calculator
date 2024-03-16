@@ -1,13 +1,15 @@
 {
   "files": {
-    "main.css": "/itz-predator.github.io/Calculator/static/css/main.dc4d6ff2.css",
-    "main.js": "/itz-predator.github.io/Calculator/static/js/main.becb9cb6.js",
-    "index.html": "/itz-predator.github.io/Calculator/index.html",
-    "main.dc4d6ff2.css.map": "/itz-predator.github.io/Calculator/static/css/main.dc4d6ff2.css.map",
-    "main.becb9cb6.js.map": "/itz-predator.github.io/Calculator/static/js/main.becb9cb6.js.map"
+    "main.css": "/Calculator/static/css/main.4707a4cf.css",
+    "main.js": "/Calculator/static/js/main.6614581c.js",
+    "static/js/453.83bdee10.chunk.js": "/Calculator/static/js/453.83bdee10.chunk.js",
+    "index.html": "/Calculator/index.html",
+    "main.4707a4cf.css.map": "/Calculator/static/css/main.4707a4cf.css.map",
+    "main.6614581c.js.map": "/Calculator/static/js/main.6614581c.js.map",
+    "453.83bdee10.chunk.js.map": "/Calculator/static/js/453.83bdee10.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.dc4d6ff2.css",
-    "static/js/main.becb9cb6.js"
+    "static/css/main.4707a4cf.css",
+    "static/js/main.6614581c.js"
   ]
 }

@@ -1,16 +1,29 @@
 import React, { useState } from "react";
-import "./style.css";
+import { evaluate } from "mathjs";
+import "./App.css";
+import {
+  FaDivide,
+  FaTimes,
+  FaMinus,
+  FaPlus,
+  FaEquals,
+  FaBackspace,
+  FaTrashAlt,
+  FaDotCircle,
+  FaRegCircle,
+
+} from "react-icons/fa";
+
+import { MdDoubleArrow } from "react-icons/md";
 
 function App() {
   const [value, setValue] = useState("");
 
-  const handleClick = (val) => {
-    setValue(value + val);
-  };
+  const handleClick = (val) => setValue(value + val);
 
   const calculate = () => {
     try {
-      setValue(eval(value).toString()); // Note: Still using eval — ok for small projects
+      setValue(evaluate(value).toString());
     } catch {
       setValue("Error");
     }
@@ -22,31 +35,63 @@ function App() {
   return (
     <div className="calculator-container">
       <div className="calculator">
-        <input type="text" className="calculator-display" value={value} placeholder="0" readOnly />
+        <input
+          type="text"
+          className="calculator-display"
+          value={value}
+          placeholder="0"
+          readOnly
+        />
         <div className="calculator-buttons">
-          <button className="btn operator" onClick={clear}>AC</button>
-          <button className="btn operator" onClick={del}>DEL</button>
-          <button className="btn operator" onClick={() => handleClick("/")}>/</button>
-          <button className="btn operator" onClick={() => handleClick("*")}>*</button>
+          <button className="btn operator" onClick={clear} title="Clear All">
+            <FaTrashAlt />
+          </button>
+          <button className="btn operator" onClick={del} title="Delete Last">
+            <FaBackspace />
+          </button>
+          <button className="btn operator" onClick={() => handleClick("/")}>
+            <FaDivide />
+          </button>
+          <button className="btn operator" onClick={() => handleClick("*")}>
+            <FaTimes />
+          </button>
 
-          <button className="btn" onClick={() => handleClick("7")}>7</button>
-          <button className="btn" onClick={() => handleClick("8")}>8</button>
-          <button className="btn" onClick={() => handleClick("9")}>9</button>
-          <button className="btn operator" onClick={() => handleClick("-")}>-</button>
+          {[7, 8, 9].map((num) => (
+            <button key={num} className="btn" onClick={() => handleClick(num)}>
+              {num}
+            </button>
+          ))}
+          <button className="btn operator" onClick={() => handleClick("-")}>
+            <FaMinus />
+          </button>
 
-          <button className="btn" onClick={() => handleClick("4")}>4</button>
-          <button className="btn" onClick={() => handleClick("5")}>5</button>
-          <button className="btn" onClick={() => handleClick("6")}>6</button>
-          <button className="btn operator" onClick={() => handleClick("+")}>+</button>
+          {[4, 5, 6].map((num) => (
+            <button key={num} className="btn" onClick={() => handleClick(num)}>
+              {num}
+            </button>
+          ))}
+          <button className="btn operator" onClick={() => handleClick("+")}>
+            <FaPlus />
+          </button>
 
-          <button className="btn" onClick={() => handleClick("1")}>1</button>
-          <button className="btn" onClick={() => handleClick("2")}>2</button>
-          <button className="btn" onClick={() => handleClick("3")}>3</button>
-          <button className="btn equal" onClick={calculate}>=</button>
+          {[1, 2, 3].map((num) => (
+            <button key={num} className="btn" onClick={() => handleClick(num)}>
+              {num}
+            </button>
+          ))}
+          <button className="btn equal" onClick={calculate}>
+            <FaEquals />
+          </button>
 
-          <button className="btn" onClick={() => handleClick("00")}>00</button>
-          <button className="btn" onClick={() => handleClick("0")}>0</button>
-          <button className="btn" onClick={() => handleClick(".")}>.</button>
+          <button className="btn" onClick={() => handleClick("00")}>
+            <MdDoubleArrow />
+          </button>
+          <button className="btn" onClick={() => handleClick("0")}>
+            <FaRegCircle />
+          </button>
+          <button className="btn" onClick={() => handleClick(".")}>
+            <FaDotCircle />
+          </button>
         </div>
       </div>
     </div>
